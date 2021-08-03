@@ -3,14 +3,32 @@
   <POU Name="MAIN" Id="{7a32f106-3942-4996-95db-32d556c79356}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
-	testBit				:BOOL;
+	bStart			:BOOL;
+	iStep			:INT;
+	bCondition1 	:BOOL;
+	bCondition2		:BOOL;
+	bCondition3     :BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[testBit := TRUE;]]></ST>
+      <ST><![CDATA[CASE iStep OF
+
+	0: IF bStart THEN
+		iStep:=10;
+	   END_IF
+	   
+	10: IF bCondition1 THEN
+		iStep:=0;
+	    END_IF
+END_CASE]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="2" Count="0" />
+      <LineId Id="15" Count="0" />
+      <LineId Id="11" Count="0" />
+      <LineId Id="13" Count="1" />
+      <LineId Id="16" Count="3" />
+      <LineId Id="12" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>
